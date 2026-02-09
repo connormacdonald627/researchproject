@@ -1,15 +1,22 @@
-export function CreateChart(SelectedElementID, Datasets, Labels, Type = "line") {
+export function CreateChart(SelectedElementID, Title, Datasets, Labels, Type = "line") {
   const Container = document.querySelector(`#${SelectedElementID}`);
   if (!Container) {
     console.error(`No element found for selector "${SelectedElementID}"`);
     return;
   }
 
+
+  const ChartContainer = document.createElement('div');
   const Canvas = document.createElement("canvas");
-  Container.appendChild(Canvas);
+  const TitleElement = document.createElement('h1');
+  TitleElement.textContent = Title;
+  ChartContainer.appendChild(TitleElement);
+  ChartContainer.appendChild(Canvas);
+  Container.appendChild(ChartContainer);
   Canvas.style.width = "100%";
   Canvas.style.height = "100%";
-  Canvas.style.minHeight = "400px";
+  Canvas.style.minHeight = "500px";
+  Canvas.style.maxHeight = "500px";
 
   const Config = {
     type: Type,
