@@ -85,9 +85,6 @@ a:hover {
   flex-direction: column;
   gap: 6px;
 }
-.menu:hover{
-  background-color: rgba(0, 0, 0, 0);
-}
 
 .menu-dropdown > * {
   display: flex;
