@@ -16,13 +16,19 @@
       <h1>Introduction</h1>
       <p>
         TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are widely used protocols for communication between devices in 
-        IoT (Internet of Things) networks. However, the performance and overhead of these protocols remain unclear in different IoT network scenarios.
+        IoT (Internet of Things) networks. However, the performance and overhead of these 
+        protocols remain obscure in different IoT network scenarios.
       </p>
       <p>
-        These protocols behave very differently: TCP prioritises reliability and is connection-oriented, retransmitting packets when acknowledgements from the destination are not received. UDP, on the other hand, is connectionless and does not guarantee delivery, sending packets without confirmation. <a href="#1">[1]</a>
+        These protocols behave very differently: TCP prioritises reliability and is 
+        connection-oriented, retransmitting packets when acknowledgements from the 
+        destination are not received. UDP, on the other hand, is connectionless and does not 
+        guarantee delivery, sending packets without confirmation. <a href="#1">[1]</a>
       </p>
-      <p>
-        However, the performance of these protocols can vary depending on factors such as throughput, packet size, and network load. To investigate these effects, NS2 (Network Simulator 2) and NAM (Network Animator) will be used to assess performance metrics, including end-to-end delay and packet loss, by varying packet size, node count, and throughput in an IoT networking scenario. Differences in upstream and downstream performance will also be examined to provide a comprehensive evaluation of protocol behavior under varying network conditions.
+      <p>The performance of these protocols varies depending on a multitude of factors, including but not limited to packet size, network topology and throughput.
+        To investigate these variables, NS2 (Network Simulator 2) and NAM (Network Animator) will be utilized to assess
+        performance metrics such as end-to-end delay and packet loss by varying packet size, node count, and throughput in an IoT networking scenario.
+        The variance of upstream and downstream traffic flow will also be examined to review the performance of these protocols under a diverse array of network conditions. 
       </p>
     </section>
 
