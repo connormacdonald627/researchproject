@@ -15,22 +15,17 @@
     <section id="introduction">
       <h1>Introduction</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec
-        rhoncus justo, quis rutrum orci. Phasellus ante leo, venenatis eget diam
-        vitae, pretium gravida enim. Aenean commodo cursus justo, faucibus
-        egestas lectus vulputate ut. Sed auctor arcu eu nisl fringilla, sed
-        suscipit mi interdum. Sed in mattis lorem. Phasellus ac neque et mi
-        sodales molestie nec nec erat. Vestibulum lacinia ornare molestie.
-        Aliquam lobortis, risus a rutrum gravida, arcu tellus maximus arcu, at
-        ultricies felis erat ut purus. Nam sit amet imperdiet nisl. Vestibulum
-        volutpat metus sit amet sodales tempus. Sed scelerisque volutpat ipsum
-        luctus placerat. Proin sed fringilla justo, eu egestas ipsum. Aliquam
-        efficitur nunc et malesuada mollis. Interdum et malesuada fames ac ante
-        ipsum primis in faucibus. Praesent consectetur nunc id leo commodo, sed
-        mollis mauris lacinia. Mauris massa erat, efficitur non pretium non,
-        posuere tempor enim.
+        TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are widely used protocols for communication between devices in 
+        IoT (Internet of Things) networks. However, the performance and overhead of these protocols remain unclear in different IoT network scenarios.
+      </p>
+      <p>
+        These protocols behave very differently: TCP prioritises reliability and is connection-oriented, retransmitting packets when acknowledgements from the destination are not received. UDP, on the other hand, is connectionless and does not guarantee delivery, sending packets without confirmation. <a href="#1">[1]</a>
+      </p>
+      <p>
+        However, the performance of these protocols can vary depending on factors such as throughput, packet size, and network load. To investigate these effects, NS2 (Network Simulator 2) and NAM (Network Animator) will be used to assess performance metrics, including end-to-end delay and packet loss, by varying packet size, node count, and throughput in an IoT networking scenario. Differences in upstream and downstream performance will also be examined to provide a comprehensive evaluation of protocol behavior under varying network conditions.
       </p>
     </section>
+
     <section id="section1">
       <h1>Section #1</h1>
       <p>
@@ -68,6 +63,10 @@
       <div id="carousel"></div>
       <div id="chart"></div>
       <div id="chart2"></div>
+    </section>
+    <section>
+      <h1>Citations & References</h1>
+      <a id="1" href="https://www.researchgate.net/profile/Fahad-Al-Dhief/publication/329591640_Performance_Comparison_between_TCP_and_UDP_Protocols_in_Different_Simulation_Scenarios/links/5c1221c992851c39ebe995a6/Performance-Comparison-between-TCP-and-UDP-Protocols-in-Different-Simulation-Scenarios.pdf">[1] Al-Dhief, F.T., Sabri, N., Latiff, N.A., Malik, N.N.N.A., Abbas, M., Albader, A., Mohammed, M.A., AL-Haddad, R.N., Salman, Y.D., Khanapi, M. and Ghani, A., 2018. Performance comparison between TCP and UDP protocols in different simulation scenarios. International Journal of Engineering & Technology, 7(4.36), pp.172</a>
     </section>
   </body>
 </html>
