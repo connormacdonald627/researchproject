@@ -23,6 +23,7 @@ const Labels = ["A", "B", "C", "D", "E"];
 Header("header", "UDP/TCP Performance in IoT Evaluation", true, [
   { Text: "Introduction", URL: "#introduction" },
   { Text: "Section #1", URL: "#section1" },
+  { Text: "Citations & References", URL: "#citations" },
 ]);
 
 CreateChart("chart", [Dataset1, Dataset2], Labels, "bar");
