@@ -27,4 +27,4 @@ Header("header", "UDP/TCP Performance in IoT Evaluation", true, [
 
 CreateChart("chart", [Dataset1, Dataset2], Labels, "bar");
 CreateChart("chart2", [Dataset2, Dataset1], Labels, "line");
-Carousel('carousel', ["chart", "chart2"]);
+Carousel('carousel', ['Chart 1', 'Chart 2'], ["chart", "chart2"]);
