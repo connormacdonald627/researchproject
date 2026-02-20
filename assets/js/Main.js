@@ -4,6 +4,17 @@ import Carousel from "../components/carousel/Carousel.js";
 import bandwidth_tcp from "../../data/bandwidth/tcp-summary.json" with { type: "json" };
 import bandwidth_udp from "../../data/bandwidth/udp-summary.json" with { type: "json" };
 
+bandwidth_tcp.sort((a, b) => {
+  const rateA = parseFloat(a.File.match(/rate(\d+\.?\d*)/)[1]);
+  const rateB = parseFloat(b.File.match(/rate(\d+\.?\d*)/)[1]);
+  return rateA - rateB;
+});
+bandwidth_udp.sort((a, b) => {
+  const rateA = parseFloat(a.File.match(/rate(\d+\.?\d*)/)[1]);
+  const rateB = parseFloat(b.File.match(/rate(\d+\.?\d*)/)[1]);
+  return rateA - rateB;
+});
+
 const BandwidthTCPData = {
   label: "TCP Throughput",
   data: bandwidth_tcp.map((entry) => Number(entry.Analysis.ThroughputKbps)),
@@ -49,6 +60,6 @@ Header("header", "UDP/TCP Performance in IoT Evaluation", true, [
   { Text: "Citations & References", URL: "#citations" },
 ]);
 
-CreateChart("bandwidth", [BandwidthTCPData, BandwidthUDPData], Labels, "line", "Network Scenario", "Throughput (Kbps)");
-CreateChart("packetloss", [PacketLossTCPData, PacketLossUDPData], Labels, "line", "Network Scenario", "Packet Loss (%)");
+CreateChart("bandwidth", [BandwidthTCPData, BandwidthUDPData], Labels, "line", "Bandwidth", "Throughput (Kbps)");
+CreateChart("packetloss", [PacketLossTCPData, PacketLossUDPData], Labels, "line", "Bandwidth", "Packet Loss (%)");
 Carousel('carousel', ['Bandwidth', 'Packet Loss'], ["bandwidth", "packetloss"]);

@@ -52,36 +52,32 @@
     <section id="data-analysis">
       <h1>Data Analysis</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec
-        rhoncus justo, quis rutrum orci. Phasellus ante leo, venenatis eget diam
-        vitae, pretium gravida enim. Aenean commodo cursus justo, faucibus
-        egestas lectus vulputate ut. Sed auctor arcu eu nisl fringilla, sed
-        suscipit mi interdum. Sed in mattis lorem. Phasellus ac neque et mi
-        sodales molestie nec nec erat. Vestibulum lacinia ornare molestie.
-        Aliquam lobortis, risus a rutrum gravida, arcu tellus maximus arcu, at
-        ultricies felis erat ut purus. Nam sit amet imperdiet nisl. Vestibulum
-        volutpat metus sit amet sodales tempus. Sed scelerisque volutpat ipsum
-        luctus placerat. Proin sed fringilla justo, eu egestas ipsum. Aliquam
-        efficitur nunc et malesuada mollis. Interdum et malesuada fames ac ante
-        ipsum primis in faucibus. Praesent consectetur nunc id leo commodo, sed
-        mollis mauris lacinia. Mauris massa erat, efficitur non pretium non,
-        posuere tempor enim.
+        In this simulation scenario, I have 6 nodes sending upstream to a
+        central gateway node and send packets of size 512 bytes. The rate of
+        packet transmission is varied from 50,000 bps to 1,000,000 bps with it
+        approximately doubling each step.
       </p>
+      <h3>Bandwidth & Throughput</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec
-        rhoncus justo, quis rutrum orci. Phasellus ante leo, venenatis eget diam
-        vitae, pretium gravida enim. Aenean commodo cursus justo, faucibus
-        egestas lectus vulputate ut. Sed auctor arcu eu nisl fringilla, sed
-        suscipit mi interdum. Sed in mattis lorem. Phasellus ac neque et mi
-        sodales molestie nec nec erat. Vestibulum lacinia ornare molestie.
-        Aliquam lobortis, risus a rutrum gravida, arcu tellus maximus arcu, at
-        ultricies felis erat ut purus. Nam sit amet imperdiet nisl. Vestibulum
-        volutpat metus sit amet sodales tempus. Sed scelerisque volutpat ipsum
-        luctus placerat. Proin sed fringilla justo, eu egestas ipsum. Aliquam
-        efficitur nunc et malesuada mollis. Interdum et malesuada fames ac ante
-        ipsum primis in faucibus. Praesent consectetur nunc id leo commodo, sed
-        mollis mauris lacinia. Mauris massa erat, efficitur non pretium non,
-        posuere tempor enim.
+        Through experimentation and NS2 simulation results, it was observed that
+        TCP signficiantly underperformed UDP in terms of throughput, with TCP
+        achieving a maximum rate of 2,091 Kbps whilst UDP achieved a maximum
+        rate of 4,187 Kbps which is approximately double the output of TCP; This
+        is likely due the implemention of TCP's reliability mechanisms, such as
+        slow start and congestion control, along with overhead from
+        acknowledgements and retransmissions of dropped data packets.
+      </p>
+      <h3>Packet Loss</h3>
+      <p>
+        Whilst TCP's reliabbility mechanisms signficantly reduced throughput, it
+        also resulted in a critical reduction in packet loss. With TCP achieving
+        a maximum packet loss rate of 5% compared to UDP's maximum packet loss
+        rate of 33%. Its worth noting that TCP at 500,000 bps had a packet loss
+        rate of 0.39% which may be due to TCP's ability to adapt to network
+        conditions using its slow start mechanism which allows it to gradually
+        increase its transmission rate until it finds an optiomal rate for
+        sending data without overwheling the network; leading to a significant
+        reduction in packet loss at higher throughputs.
       </p>
       <div id="carousel"></div>
       <div id="bandwidth"></div>
