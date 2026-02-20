@@ -27,7 +27,7 @@ const Labels = bandwidth_tcp.map(entry => {
 
 
 const PacketLossTCPData = {
-  label: "TCP Packet Loss (%)",
+  label: "TCP Packet Loss",
   data: bandwidth_tcp.map(entry => Number(entry.Analysis.DropRatePercent)),
   backgroundColor: "red",
   borderColor: "red",
@@ -35,7 +35,7 @@ const PacketLossTCPData = {
 };
 
 const PacketLossUDPData = {
-  label: "UDP Packet Loss (%)",
+  label: "UDP Packet Loss",
   data: bandwidth_udp.map(entry => Number(entry.Analysis.DropRatePercent)),
   backgroundColor: "orange",
   borderColor: "orange",
