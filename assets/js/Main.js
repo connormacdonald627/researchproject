@@ -45,7 +45,7 @@ const PacketLossUDPData = {
 
 Header("header", "UDP/TCP Performance in IoT Evaluation", true, [
   { Text: "Introduction", URL: "#introduction" },
-  { Text: "Section #1", URL: "#section1" },
+  { Text: "Data Analysis", URL: "#data-analysis" },
   { Text: "Citations & References", URL: "#citations" },
 ]);
 
