@@ -1,0 +1,162 @@
+[
+  {
+    "File": "out_tcp_pkt512_upstream_rate100000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop",
+        "forward"
+      ],
+      "PacketTypes": [
+        "TCP",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "5496.00",
+      "TotalReceivedKB": "5192.72",
+      "DropRatePercent": "5.52",
+      "ThroughputKbps": "2077.26"
+    }
+  },
+  {
+    "File": "out_tcp_pkt512_upstream_rate1000000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop",
+        "forward"
+      ],
+      "PacketTypes": [
+        "TCP",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "5300.11",
+      "TotalReceivedKB": "5072.64",
+      "DropRatePercent": "4.29",
+      "ThroughputKbps": "2029.49"
+    }
+  },
+  {
+    "File": "out_tcp_pkt512_upstream_rate250000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop",
+        "forward"
+      ],
+      "PacketTypes": [
+        "TCP",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "5533.28",
+      "TotalReceivedKB": "5227.10",
+      "DropRatePercent": "5.53",
+      "ThroughputKbps": "2091.04"
+    }
+  },
+  {
+    "File": "out_tcp_pkt512_upstream_rate50000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop",
+        "forward"
+      ],
+      "PacketTypes": [
+        "TCP",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "4786.29",
+      "TotalReceivedKB": "4764.88",
+      "DropRatePercent": "0.45",
+      "ThroughputKbps": "1905.98"
+    }
+  },
+  {
+    "File": "out_tcp_pkt512_upstream_rate500000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop",
+        "forward"
+      ],
+      "PacketTypes": [
+        "TCP",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "4803.69",
+      "TotalReceivedKB": "4784.78",
+      "DropRatePercent": "0.39",
+      "ThroughputKbps": "1914.32"
+    }
+  }
+]

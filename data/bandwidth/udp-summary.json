@@ -1,0 +1,161 @@
+[
+  {
+    "File": "out_udp_pkt512_upstream_rate100000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop",
+        "forward"
+      ],
+      "PacketTypes": [
+        "CBR",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "15479.22",
+      "TotalReceivedKB": "10456.59",
+      "DropRatePercent": "32.45",
+      "ThroughputKbps": "4183.09"
+    }
+  },
+  {
+    "File": "out_udp_pkt512_upstream_rate1000000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop",
+        "forward"
+      ],
+      "PacketTypes": [
+        "CBR",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "15600.06",
+      "TotalReceivedKB": "10457.14",
+      "DropRatePercent": "32.97",
+      "ThroughputKbps": "4183.78"
+    }
+  },
+  {
+    "File": "out_udp_pkt512_upstream_rate250000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop"
+      ],
+      "PacketTypes": [
+        "CBR",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "15682.34",
+      "TotalReceivedKB": "10455.98",
+      "DropRatePercent": "33.33",
+      "ThroughputKbps": "4183.31"
+    }
+  },
+  {
+    "File": "out_udp_pkt512_upstream_rate50000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop",
+        "forward"
+      ],
+      "PacketTypes": [
+        "CBR",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "14878.37",
+      "TotalReceivedKB": "10459.53",
+      "DropRatePercent": "29.70",
+      "ThroughputKbps": "4184.29"
+    }
+  },
+  {
+    "File": "out_udp_pkt512_upstream_rate500000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        0
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop",
+        "forward"
+      ],
+      "PacketTypes": [
+        "CBR",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "15320.46",
+      "TotalReceivedKB": "10467.12",
+      "DropRatePercent": "31.68",
+      "ThroughputKbps": "4187.56"
+    }
+  }
+]

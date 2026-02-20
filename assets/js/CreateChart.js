@@ -1,4 +1,11 @@
-export function CreateChart(SelectedElementID, Datasets, Labels, Type = "line") {
+export function CreateChart(
+  SelectedElementID,
+  Datasets,
+  Labels,
+  Type = "line",
+  XAxisTitle = "",
+  YAxisTitle = ""
+) {
   const Container = document.querySelector(`#${SelectedElementID}`);
   if (!Container) {
     console.error(`No element found for selector "${SelectedElementID}"`);
@@ -24,16 +31,20 @@ export function CreateChart(SelectedElementID, Datasets, Labels, Type = "line") 
         legend: { labels: { color: "white" } },
       },
       scales: {
-        x: { ticks: { color: "white" }, grid: { color: "#555" } },
+        x: {
+          ticks: { color: "white" },
+          grid: { color: "#555" },
+          title: { display: !!XAxisTitle, text: XAxisTitle, color: "white" },
+        },
         y: {
           ticks: { color: "white" },
           grid: { color: "#555" },
           beginAtZero: true,
+          title: { display: !!YAxisTitle, text: YAxisTitle, color: "white" },
         },
       },
     },
   };
 
-  const NewChart = new Chart(Canvas, Config);
-  return NewChart;
+  return new Chart(Canvas, Config);
 }
