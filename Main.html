@@ -22,8 +22,8 @@
         <p>
           IoT in this situation refers to the edge networking layer of systems,
           in which devices such as sensors and other embedded devices are
-          connected to a centeral node, such as a gateway or server, to transmit
-          or recieve data. Assessing the performance of these protocols in this
+          connected to a central node, such as a gateway or server, to transmit
+          or receive data. Assessing the performance of these protocols in this
           context cruical due to the unique characteristics of IoT networks,
           such as limited throughput, high latency, and an increased number of
           connected devices. I will assess the performance of UDP/TCP protocols
@@ -64,25 +64,25 @@
             </p>
             <p>
               Through experimentation and NS2 simulation results, it was
-              observed that TCP signficiantly underperformed UDP in terms of
+              observed that TCP significantly underperformed UDP in terms of
               throughput, with TCP achieving a maximum rate of 2,091 Kbps whilst
               UDP achieved a maximum rate of 4,187 Kbps which is approximately
-              double the output of TCP; This is likely due the implemention of
+              double the output of TCP; This is likely due the implementation of
               TCP's reliability mechanisms, such as slow start and congestion
               control, along with overhead from acknowledgements and
               retransmissions of dropped data packets.
             </p>
             <h3>Packet Loss</h3>
             <p>
-              Whilst TCP's reliabbility mechanisms signficantly reduced
+              Whilst TCP's reliability mechanisms signficantly reduced
               throughput, it also resulted in a critical reduction in packet
               loss. With TCP achieving a maximum packet loss rate of 5% compared
               to UDP's maximum packet loss rate of 33%. Its worth noting that
               TCP at 500,000 byte/s had a packet loss rate of 0.39% which may be
               due to TCP's ability to adapt to network conditions using its slow
               start mechanism which allows it to gradually increase its
-              transmission rate until it finds an optiomal rate for sending data
-              without overwheling the network; leading to a significant
+              transmission rate until it finds an optimal rate for sending data
+              without overwhelming the network; leading to a significant
               reduction in packet loss at higher throughputs.
             </p>
             <div id="carousel"></div>
@@ -92,14 +92,16 @@
         </section>
         <section id="node-count">
           <h1>Node Count</h1>
+
           <p>
             In simulation scenarios with varying numbers of nodes, TCP and UDP's
             throughput and packet loss both have a positive correlation with
             node count. As the number of nodes increases, the throughput of both
             protocols increases due to more node data being transmitted to the
-            centeral gateway, along with an increase in packet loss due to an
-            increase in network congestion.
+            central gateway, along with an increase in packet loss due to
+            network congestion.
           </p>
+
           <div id="carousel-node-count"></div>
           <div id="fig_a">
             <img
@@ -107,7 +109,11 @@
               height="400px"
               src="./assets/images/figure_a.png"
             />
-            <a href="#2">[2]</a>
+            <p class="caption">
+              Figure A: Comparison of throughput across protocols with node
+              count increase.
+              <a href="#2">[2]</a>
+            </p>
           </div>
           <div id="fig_b">
             <img
@@ -115,8 +121,57 @@
               height="400px"
               src="./assets/images/figure_b.png"
             />
-            <a href="#2">[2]</a>
+            <p class="caption">
+              Figure B: Packet loss comparison across protocols with node count
+              increase.
+              <a href="#2">[2]</a>
+            </p>
           </div>
+
+          <h2>Throughput & Node Density</h2>
+          <p>
+            Figure A shows how throughput grows as more nodes join the network.
+            UDP maintains a high throughput across all node densities, while
+            TCP's throughput is significantly lower due to its connection
+            oriented overhead and reliability ensuring implementations. As
+            overall node count increases from 10 to 60, overall network
+            throughput increases with the network handling the increased traffic
+            and node density in this range. <a href="#2">[2]</a>
+          </p>
+
+          <h2>Packet Loss Compromises</h2>
+          <p>
+            Figure B shows that TCP's reliability mechanisms, such as
+            acknowledgements and retransmissions, significantly reduce packet
+            loss compared to UDP, which lacks these features. As node count
+            increases packet loss across all protocols increase due to network
+            congestion due to the central gateway becoming a bottleneck for the
+            whole network as all nodes send packets simultaneously to a single
+            gateway. <a href="#2">[2]</a>
+          </p>
+
+          <h2>Implications for IoT Network Design and Topology</h2>
+          <p>
+            The results from the simulation scenarios with varying node counts
+            indicate that there is a compromise between throughput and
+            reliability as node count increases, which aligns with my findings
+            from the bandwidth simulation scenarios.
+          </p>
+          <p>
+            In high density IoT sensor networks; Networks that prioritise
+            throughput may need to accept higher packet loss rates and may be
+            better suited to protocols such as UDP, while networks that
+            prioritise data integrity and reliability may need to accept lower
+            throughput and may be better suited to protocols such as TCP.
+          </p>
+          <p>
+            Regardless of protocol choice, the central gateway always becomes a
+            bottleneck as node count increases. Multiple gateways or a different
+            network topology, such as a hierarchical structure may be better
+            adapted to such scenarios to reduce the bottleneck in high density
+            IoT networks and improve overall performance as the network scales
+            in real world deployments.
+          </p>
         </section>
       </section>
       <section id="citations">
