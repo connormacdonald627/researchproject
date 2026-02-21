@@ -41,7 +41,7 @@
           factors, including but not limited to packet size, network topology
           and throughput. To investigate these variables, NS2 (Network Simulator
           2) will be utilized to assess performance metrics such as packet loss
-          by varying bandiwdth and node count in an IoT networking scenario. The
+          by varying bandwidth and node count in an IoT networking scenario. The
           variance of upstream and downstream traffic flow will also be examined
           to review the performance of these protocols under a diverse array of
           network conditions.
@@ -60,15 +60,15 @@
               byte/s with it approximately doubling each step. Each experiment
               runs for 20 seconds and the performance of TCP and UDP is assessed
               by measuring the total throughput and packet loss from the raw
-              data each NS2 simulation.
+              data from each NS2 simulation.
             </p>
             <p>
               Through experimentation and NS2 simulation results, it was
               observed that TCP significantly underperformed UDP in terms of
               throughput, with TCP achieving a maximum rate of 2,091 Kbps whilst
               UDP achieved a maximum rate of 4,187 Kbps which is approximately
-              double the output of TCP; This is likely due the implementation of
-              TCP's reliability mechanisms, such as slow start and congestion
+              double the output of TCP; This is likely due to the implementation
+              of TCP's reliability mechanisms, such as slow start and congestion
               control, along with overhead from acknowledgements and
               retransmissions of dropped data packets; The consistency of the
               variance in TCP and UDP's throughput across the range of
@@ -78,16 +78,16 @@
             </p>
             <h3>Packet Loss</h3>
             <p>
-              Whilst TCP's reliability mechanisms signficantly reduced
+              Whilst TCP's reliability mechanisms significantly reduced
               throughput, it also resulted in a critical reduction in packet
               loss. With TCP achieving a maximum packet loss rate of 5% compared
-              to UDP's maximum packet loss rate of 33%. Its worth noting that
+              to UDP's maximum packet loss rate of 33%. It's worth noting that
               TCP at 500,000 byte/s had a packet loss rate of 0.39% which may be
               due to TCP's ability to adapt to network conditions using its slow
               start mechanism which allows it to gradually increase its
               transmission rate until it finds an optimal rate for sending data
               without overwhelming the network; leading to a significant
-              reduction in packet loss at higher throughputs.
+              reduction in packet loss at higher throughput.
             </p>
             <div id="carousel"></div>
             <div id="bandwidth-chart"></div>
