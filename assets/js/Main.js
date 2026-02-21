@@ -60,6 +60,10 @@ Header("header", "UDP/TCP Performance in IoT Evaluation", true, [
   { Text: "Citations & References", URL: "#citations" },
 ]);
 
-CreateChart("bandwidth", [BandwidthTCPData, BandwidthUDPData], Labels, "line", "Bandwidth", "Throughput (Kbps)");
-CreateChart("packetloss", [PacketLossTCPData, PacketLossUDPData], Labels, "line", "Bandwidth", "Packet Loss (%)");
-Carousel('carousel', ['Bandwidth', 'Packet Loss'], ["bandwidth", "packetloss"]);
+CreateChart("bandwidth-chart", [BandwidthTCPData, BandwidthUDPData], Labels, "line", "Bandwidth", "Throughput (Kbps)");
+CreateChart("packetloss-chart", [PacketLossTCPData, PacketLossUDPData], Labels, "line", "Bandwidth", "Packet Loss (%)");
+Carousel('carousel', ['Bandwidth', 'Packet Loss'], ["bandwidth-chart", "packetloss-chart"]);
+
+
+
+Carousel('carousel-node-count', ['Throughput', 'Packet Loss'], ["fig_a", "fig_b"]);

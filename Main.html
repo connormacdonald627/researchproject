@@ -10,89 +10,143 @@
   </head>
   <body>
     <div id="header"></div>
+    <div id="root">
+      <section id="introduction">
+        <h1>Introduction</h1>
+        <p>
+          TCP (Transmission Control Protocol) and UDP (User Datagram Protocol)
+          are widely used protocols for communication between devices in IoT
+          (Internet of Things) networks. However, the performance and overhead
+          of these protocols remain obscure in different IoT network scenarios.
+        </p>
+        <p>
+          IoT in this situation refers to the edge networking layer of systems,
+          in which devices such as sensors and other embedded devices are
+          connected to a centeral node, such as a gateway or server, to transmit
+          or recieve data. Assessing the performance of these protocols in this
+          context cruical due to the unique characteristics of IoT networks,
+          such as limited throughput, high latency, and an increased number of
+          connected devices. I will assess the performance of UDP/TCP protocols
+          in this context under wireless IoT network conditions.
+        </p>
+        <p>
+          These protocols behave very differently: TCP prioritises reliability
+          and is connection-oriented, retransmitting packets when
+          acknowledgements from the destination are not received. UDP, on the
+          other hand, is connectionless and does not guarantee delivery, sending
+          packets without confirmation. <a href="#1">[1]</a>
+        </p>
+        <p>
+          The performance of these protocols varies depending on a multitude of
+          factors, including but not limited to packet size, network topology
+          and throughput. To investigate these variables, NS2 (Network Simulator
+          2) and NAM (Network Animator) will be utilized to assess performance
+          metrics such as packet loss by varying bandiwdth and node count in an
+          IoT networking scenario. The variance of upstream and downstream
+          traffic flow will also be examined to review the performance of these
+          protocols under a diverse array of network conditions.
+        </p>
+      </section>
 
-    <section id="introduction">
-      <h1>Introduction</h1>
-      <p>
-        TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are
-        widely used protocols for communication between devices in IoT (Internet
-        of Things) networks. However, the performance and overhead of these
-        protocols remain obscure in different IoT network scenarios.
-      </p>
-      <p>
-        IoT in this situation refers to the edge networking layer of systems, in
-        which devices such as sensors and other embedded devices are connected
-        to a centeral node, such as a gateway or server, to transmit or recieve
-        data. Assessing the performance of these protocols in this context
-        cruical due to the unique characteristics of IoT networks, such as
-        limited throughput, high latency, and an increased number of connected
-        devices. I will assess the performance of UDP/TCP protocols in this
-        context under wireless IoT network conditions.
-      </p>
-      <p>
-        These protocols behave very differently: TCP prioritises reliability and
-        is connection-oriented, retransmitting packets when acknowledgements
-        from the destination are not received. UDP, on the other hand, is
-        connectionless and does not guarantee delivery, sending packets without
-        confirmation. <a href="#1">[1]</a>
-      </p>
-      <p>
-        The performance of these protocols varies depending on a multitude of
-        factors, including but not limited to packet size, network topology and
-        throughput. To investigate these variables, NS2 (Network Simulator 2)
-        and NAM (Network Animator) will be utilized to assess performance
-        metrics such as packet loss by varying bandiwdth and node count in an
-        IoT networking scenario. The variance of upstream and downstream traffic
-        flow will also be examined to review the performance of these protocols
-        under a diverse array of network conditions.
-      </p>
-    </section>
-
-    <section id="data-analysis">
-      <h1>Data Analysis</h1>
-      <p>
-        In this simulation scenario, I have 6 nodes sending upstream to a
-        central gateway node and send packets of size 512 bytes. The rate of
-        packet transmission is varied from 50,000 bps to 1,000,000 bps with it
-        approximately doubling each step.
-      </p>
-      <h3>Bandwidth & Throughput</h3>
-      <p>
-        Through experimentation and NS2 simulation results, it was observed that
-        TCP signficiantly underperformed UDP in terms of throughput, with TCP
-        achieving a maximum rate of 2,091 Kbps whilst UDP achieved a maximum
-        rate of 4,187 Kbps which is approximately double the output of TCP; This
-        is likely due the implemention of TCP's reliability mechanisms, such as
-        slow start and congestion control, along with overhead from
-        acknowledgements and retransmissions of dropped data packets.
-      </p>
-      <h3>Packet Loss</h3>
-      <p>
-        Whilst TCP's reliabbility mechanisms signficantly reduced throughput, it
-        also resulted in a critical reduction in packet loss. With TCP achieving
-        a maximum packet loss rate of 5% compared to UDP's maximum packet loss
-        rate of 33%. Its worth noting that TCP at 500,000 bps had a packet loss
-        rate of 0.39% which may be due to TCP's ability to adapt to network
-        conditions using its slow start mechanism which allows it to gradually
-        increase its transmission rate until it finds an optiomal rate for
-        sending data without overwheling the network; leading to a significant
-        reduction in packet loss at higher throughputs.
-      </p>
-      <div id="carousel"></div>
-      <div id="bandwidth"></div>
-      <div id="packetloss"></div>
-    </section>
-    <section id="citations">
-      <h1>Citations & References</h1>
-      <a
-        id="1"
-        href="https://www.researchgate.net/profile/Fahad-Al-Dhief/publication/329591640_Performance_Comparison_between_TCP_and_UDP_Protocols_in_Different_Simulation_Scenarios/links/5c1221c992851c39ebe995a6/Performance-Comparison-between-TCP-and-UDP-Protocols-in-Different-Simulation-Scenarios.pdf"
-        >[1] Al-Dhief, F.T., Sabri, N., Latiff, N.A., Malik, N.N.N.A., Abbas,
-        M., Albader, A., Mohammed, M.A., AL-Haddad, R.N., Salman, Y.D., Khanapi,
-        M. and Ghani, A., 2018. Performance comparison between TCP and UDP
-        protocols in different simulation scenarios. International Journal of
-        Engineering & Technology, 7(4.36), pp.172</a
-      >
-    </section>
+      <section id="data-analysis">
+        <section>
+          <h1>Data Analysis</h1>
+          <section id="bandwidth">
+            <h1>Bandwidth & Throughput</h1>
+            <p>
+              In this simulation scenario, I have 6 nodes sending upstream to a
+              central gateway node and send packets of size 512 bytes. The rate
+              of packet transmission is varied from 50,000 byte/s to 1,000,000
+              byte/s with it approximately doubling each step. Each experiment
+              runs for 20 seconds and the performance of TCP and UDP is assessed
+              by measuring the total throughput and packet loss from the raw
+              data each NS2 simulation.
+            </p>
+            <p>
+              Through experimentation and NS2 simulation results, it was
+              observed that TCP signficiantly underperformed UDP in terms of
+              throughput, with TCP achieving a maximum rate of 2,091 Kbps whilst
+              UDP achieved a maximum rate of 4,187 Kbps which is approximately
+              double the output of TCP; This is likely due the implemention of
+              TCP's reliability mechanisms, such as slow start and congestion
+              control, along with overhead from acknowledgements and
+              retransmissions of dropped data packets.
+            </p>
+            <h3>Packet Loss</h3>
+            <p>
+              Whilst TCP's reliabbility mechanisms signficantly reduced
+              throughput, it also resulted in a critical reduction in packet
+              loss. With TCP achieving a maximum packet loss rate of 5% compared
+              to UDP's maximum packet loss rate of 33%. Its worth noting that
+              TCP at 500,000 byte/s had a packet loss rate of 0.39% which may be
+              due to TCP's ability to adapt to network conditions using its slow
+              start mechanism which allows it to gradually increase its
+              transmission rate until it finds an optiomal rate for sending data
+              without overwheling the network; leading to a significant
+              reduction in packet loss at higher throughputs.
+            </p>
+            <div id="carousel"></div>
+            <div id="bandwidth-chart"></div>
+            <div id="packetloss-chart"></div>
+          </section>
+        </section>
+        <section id="node-count">
+          <h1>Node Count</h1>
+          <p>
+            In simulation scenarios with varying numbers of nodes, TCP and UDP's
+            throughput and packet loss both have a positive correlation with
+            node count. As the number of nodes increases, the throughput of both
+            protocols increases due to more node data being transmitted to the
+            centeral gateway, along with an increase in packet loss due to an
+            increase in network congestion.
+          </p>
+          <div id="carousel-node-count"></div>
+          <div id="fig_a">
+            <img
+              width="100%"
+              height="400px"
+              src="./assets/images/figure_a.png"
+            />
+            <a href="#2">[2]</a>
+          </div>
+          <div id="fig_b">
+            <img
+              width="100%"
+              height="400px"
+              src="./assets/images/figure_b.png"
+            />
+            <a href="#2">[2]</a>
+          </div>
+        </section>
+      </section>
+      <section id="citations">
+        <h1>Citations & References</h1>
+        <section>
+          <ul>
+            <li>
+              <a
+                id="1"
+                href="https://www.researchgate.net/profile/Fahad-Al-Dhief/publication/329591640_Performance_Comparison_between_TCP_and_UDP_Protocols_in_Different_Simulation_Scenarios/links/5c1221c992851c39ebe995a6/Performance-Comparison-between-TCP-and-UDP-Protocols-in-Different-Simulation-Scenarios.pdf"
+                >[1] Al-Dhief, F.T., Sabri, N., Latiff, N.A., Malik, N.N.N.A.,
+                Abbas, M., Albader, A., Mohammed, M.A., AL-Haddad, R.N., Salman,
+                Y.D., Khanapi, M. and Ghani, A., 2018. Performance comparison
+                between TCP and UDP protocols in different simulation scenarios.
+                International Journal of Engineering & Technology, 7(4.36),
+                pp.172</a
+              >
+            </li>
+            <li>
+              <a
+                id="2"
+                href="https://www.sciencedirect.com/science/article/pii/S1877050917311754?via%3Dihub"
+                >[2] Nor, S.A., Alubady, R. and Kamil, W.A., 2017. Simulated
+                performance of TCP, SCTP, DCCP and UDP protocols over 4G
+                network. Procedia computer science, 111, pp.2-7.</a
+              >
+            </li>
+          </ul>
+        </section>
+      </section>
+    </div>
   </body>
 </html>
