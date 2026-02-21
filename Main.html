@@ -71,13 +71,14 @@
               throughput, with TCP achieving a maximum rate of 2,091 Kbps whilst
               UDP achieved a maximum rate of 4,187 Kbps which is approximately
               double the output of TCP; This is likely due to the implementation
-              of TCP's reliability mechanisms, such as slow start and congestion
-              control, along with overhead from acknowledgements and
-              retransmissions of dropped data packets; The consistency of the
-              variance in TCP and UDP's throughput across the range of
-              bandwidths indicates that TCP's reliability mechanisms impose a
-              fixed overhead of approximately 50% of the bandwidth capacity,
-              regardless of the total network load.
+              of TCP's reliability mechanisms, such as slow start (where the
+              sending rate doubles every round-trip until packet loss occurs
+              <a href="#3">[3]</a>) and congestion control, along with overhead
+              from acknowledgements and retransmissions of dropped data packets;
+              The consistency of the variance in TCP and UDP's throughput across
+              the range of bandwidths indicates that TCP's reliability
+              mechanisms impose a fixed overhead of approximately 50% of the
+              bandwidth capacity, regardless of the total network load.
             </p>
             <h3>Packet Loss</h3>
             <p>
