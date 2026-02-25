@@ -1,0 +1,33 @@
+[
+  {
+    "File": "out_udp_pkt512_downstream_rate50000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        0,
+        6,
+        2,
+        3,
+        1,
+        4,
+        5
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop"
+      ],
+      "PacketTypes": [
+        "CBR",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "15587.59",
+      "TotalReceivedKB": "10385.99",
+      "DropRatePercent": "33.37",
+      "ThroughputKbps": "4155.11"
+    }
+  }
+]

@@ -44,10 +44,10 @@
           factors, including but not limited to packet size, network topology
           and throughput. To investigate these variables, NS2 (Network Simulator
           2) will be utilized to assess performance metrics such as packet loss
-          by varying bandwidth and node count in an IoT networking scenario. The
-          variance of upstream and downstream traffic flow will also be examined
-          to review the performance of these protocols under a diverse array of
-          network conditions.
+          by varying transmission rate and node count in an IoT networking
+          scenario. The variance of upstream and downstream traffic flow will
+          also be examined to review the performance of these protocols under a
+          diverse array of network conditions.
         </p>
       </section>
 
@@ -59,8 +59,8 @@
             <p>
               In this simulation scenario, I have 6 nodes sending upstream to a
               central gateway node and send packets of size 512 bytes. The rate
-              of packet transmission is varied from 50,000 byte/s to 1,000,000
-              byte/s with it approximately doubling each step. Each experiment
+              of packet transmission is varied from 50,000 bytes/s to 1,000,000
+              bytes/s with it approximately doubling each step. Each experiment
               runs for 20 seconds and the performance of TCP and UDP is assessed
               by measuring the total throughput and packet loss from the raw
               data from each NS2 simulation. Previous studies have similarly
@@ -68,19 +68,24 @@
               scenarios. <a href="#2">[2]</a>
             </p>
             <p>
-              Through experimentation and NS2 simulation results, it was
-              observed that TCP significantly underperformed UDP in terms of
-              throughput, with TCP achieving a maximum rate of 2,091 Kbps whilst
-              UDP achieved a maximum rate of 4,187 Kbps which is approximately
-              double the output of TCP; This is likely due to the implementation
-              of TCP's reliability mechanisms, such as slow start (where the
-              sending rate doubles every round-trip until packet loss occurs
-              <a href="#3">[3]</a>) and congestion control, along with overhead
-              from acknowledgements and retransmissions of dropped data packets;
-              The consistency of the variance in TCP and UDP's throughput across
-              the range of bandwidths indicates that TCP's reliability
-              mechanisms impose a fixed overhead of approximately 50% of the
-              bandwidth capacity, regardless of the total network load.
+              Through experimentation and NS2 simulation results, TCP
+              significantly underperformed UDP in terms of throughput, with TCP
+              achieving a maximum rate of 2,091 Kbps whilst UDP achieved 4,187
+              Kbps, approximately double the total output of TCP. This
+              difference is primarily due to TCP's reliability mechanisms,
+              including slow start (where the transmission rate increases
+              gradually until packet loss occurs <a href="#3">[3]</a>) and
+              congestion control, along with overhead from acknowledgements and
+              retransmissions. The consistency of this throughput gap across the
+              tested transmission rate array suggests that TCP introduces a
+              relatively fixed performance overhead compared to UDP.
+            </p>
+            <p>
+              Through both simulations UDP and TCP maintained stable throughput
+              rates across increasing transmission rate values due to hitting
+              the maximum throughput limit for both protocols, with UDP being
+              limited by the network bandwidth and TCP being limited by its
+              reliability implementation.
             </p>
             <h3>Packet Loss</h3>
             <p>
@@ -88,16 +93,52 @@
               throughput, it also resulted in a critical reduction in packet
               loss. With TCP achieving a maximum packet loss rate of 5% compared
               to UDP's maximum packet loss rate of 33%. It's worth noting that
-              TCP at 500,000 byte/s had a packet loss rate of 0.39% which may be
-              due to TCP's ability to adapt to network conditions using its slow
-              start mechanism which allows it to gradually increase its
-              transmission rate until it finds an optimal rate for sending data
-              without overwhelming the network; leading to a significant
-              reduction in packet loss at higher throughput.
+              TCP at 500,000 bytes/s had a packet loss rate of 0.39% which may
+              be due to TCP's ability to adapt to network conditions using its
+              slow start mechanism leading to a significant reduction in packet
+              loss at higher throughput.
             </p>
             <div id="carousel"></div>
             <div id="bandwidth-chart"></div>
             <div id="packetloss-chart"></div>
+          </section>
+          <section id="streamdirection">
+            <h1>Upstream & Downstream</h1>
+            <p>
+              Under this configuration, 6 nodes are arranged in a simulation to
+              transmit data either upstream (from the nodes to the central
+              gateway) or downstream (from the central gateway to the nodes).
+              Each protocol is simulated at a transmission rate of 50,000
+              bytes/s to compare performance in both directions.
+            </p>
+            <p>
+              Regardless of data stream direction, UDP maintains a consistently
+              higher throughput compared to TCP along with high packet loss,
+              displaying a similar trend to the bandwidth simulation scenarios
+              of approximately double throughput with TCP displaying extremly
+              minimal packet loss (represented by a maximum of 6.54% packet loss
+              compared to UDP's maximum of 33.37%).
+            </p>
+            <p>
+              It is worth noting however that both protocols experienced
+              significantly higher packet loss and lower throughput for
+              downstream data direction due to originating at the central
+              gateway; This creates a transmission bottleneck due to heavy
+              competition for transmission of packets causing channel congestion
+              at the central node, leading to a reduction in data transmission
+              and unsent packets.
+            </p>
+            <p>
+              This indicates that in applications where minimal packet loss is
+              required, may benefit from an upstream network topology to ensure
+              minimal data loss and maximize network reliability. Applications
+              that require maximum throughput over reliability may need to
+              tolerate increased levels of packet loss or a different network
+              topology with multiple gateways to reduce load.
+            </p>
+            <div id="carousel-streamdirection"></div>
+            <div id="streamdirection-throughput-chart"></div>
+            <div id="streamdirection-packetloss-chart"></div>
           </section>
         </section>
         <section id="node-count">
@@ -164,7 +205,7 @@
             The results from the simulation scenarios with varying node counts
             indicate that there is a compromise between throughput and
             reliability as node count increases, which aligns with my findings
-            from the bandwidth simulation scenarios.
+            from the bandwidth and upstream & downstream simulation scenarios.
           </p>
           <p>
             In high density IoT sensor networks; Networks that prioritise

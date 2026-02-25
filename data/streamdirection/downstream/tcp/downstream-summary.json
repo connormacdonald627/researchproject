@@ -1,0 +1,33 @@
+[
+  {
+    "File": "out_tcp_pkt512_downstream_rate50000.0_range100.0_nodes6",
+    "Analysis": {
+      "Nodes": [
+        0,
+        6,
+        2,
+        3,
+        1,
+        4,
+        5
+      ],
+      "Events": [
+        "send",
+        "receive",
+        "drop"
+      ],
+      "PacketTypes": [
+        "TCP",
+        "AODV",
+        "ARP",
+        "RTS",
+        "CTS",
+        "ACK"
+      ],
+      "TotalSentKB": "5141.10",
+      "TotalReceivedKB": "4804.99",
+      "DropRatePercent": "6.54",
+      "ThroughputKbps": "1922.26"
+    }
+  }
+]
