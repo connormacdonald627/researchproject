@@ -15,6 +15,15 @@ import DownstreamTCP from "../../data/streamdirection/downstream/tcp/downstream-
 import DownstreamUDP from "../../data/streamdirection/downstream/udp/downstream-summary.json" with { type: "json" };;
 
 
+Header("header", "UDP/TCP Performance in IoT Evaluation", true, [
+  { Text: "Introduction", URL: "#introduction" },
+  { Text: "Data Analysis", URL: "#data-analysis" },
+  { Text: "Bandwidth & Throughput", URL: "#bandwidth" },
+  { Text: "Upstream & Downstream", URL: "#streamdirection" },
+  { Text: "Node Count", URL: "#node-count" },
+  { Text: "Citations & References", URL: "#citations" },
+]);
+
 //Bandwidth Charts
 BandwidthTCP.sort((a, b) => {
   const rateA = parseFloat(a.File.match(/rate(\d+\.?\d*)/)[1]);
@@ -64,15 +73,6 @@ const PacketLossUDPData = {
   borderColor: "orange",
   fill: false,
 };
-
-
-Header("header", "UDP/TCP Performance in IoT Evaluation", true, [
-  { Text: "Introduction", URL: "#introduction" },
-  { Text: "Data Analysis", URL: "#data-analysis" },
-  { Text: "Bandwidth & Throughput", URL: "#bandwidth" },
-  { Text: "Node Count", URL: "#node-count" },
-  { Text: "Citations & References", URL: "#citations" },
-]);
 
 CreateChart("bandwidth-chart", [BandwidthTCPData, BandwidthUDPData], Labels, "line", "Transmission Rate", "Throughput (Kbps)");
 CreateChart("packetloss-chart", [PacketLossTCPData, PacketLossUDPData], Labels, "line", "Transmission Rate", "Packet Loss (%)");
